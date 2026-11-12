@@ -2,8 +2,8 @@ class Quotabar < Formula
   desc "Claude plan usage in the macOS menu bar"
   homepage "https://github.com/RoryDotGG/QuotaBar"
   url "https://github.com/RoryDotGG/QuotaBar.git",
-      tag:      "v1.1.0",
-      revision: "6d9334ee457023585d256d56784599a9336e5d45"
+      tag:      "v1.1.1",
+      revision: "f8dfee1f7090d83575a2bf09d519d76335b9c097"
   head "https://github.com/RoryDotGG/QuotaBar.git", branch: "main"
 
   depends_on macos: :sonoma
