@@ -2,8 +2,8 @@ class Quotabar < Formula
   desc "Claude plan usage in the macOS menu bar"
   homepage "https://github.com/RoryDotGG/QuotaBar"
   url "https://github.com/RoryDotGG/QuotaBar.git",
-      tag:      "v1.1.3",
-      revision: "dabcf8cf2309183b9db0c15dc6b49bc8a229ec4b"
+      tag:      "v1.1.4",
+      revision: "8eb14ee419ead30dc6b4f9cea9d1d4e67eac6f0a"
   head "https://github.com/RoryDotGG/QuotaBar.git", branch: "main"
 
   depends_on macos: :sonoma
@@ -13,11 +13,11 @@ class Quotabar < Formula
     prefix.install "QuotaBar.app"
   end
 
-  # `open -n` hands the app to LaunchServices and exits, so `brew services stop`
-  # only removes the login item; it never kills a running copy. opt_prefix is
-  # stable across upgrades, unlike the versioned Cellar path.
+  # `open -n -W` hands the app to LaunchServices and waits while it runs, so brew
+  # sees the service as started, yet `brew services stop` only ends the wait and
+  # never kills the app. opt_prefix is stable across upgrades, unlike the Cellar path.
   service do
-    run ["/usr/bin/open", "-n", opt_prefix/"QuotaBar.app"]
+    run ["/usr/bin/open", "-n", "-W", opt_prefix/"QuotaBar.app"]
     run_type :immediate
     keep_alive false
   end
