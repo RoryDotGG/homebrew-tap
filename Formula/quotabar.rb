@@ -3,8 +3,8 @@ class Quotabar < Formula
   homepage "https://github.com/RoryDotGG/QuotaBar"
   license "MIT"
   url "https://github.com/RoryDotGG/QuotaBar.git",
-      tag:      "v1.4.2",
-      revision: "4b4a203a8abb042d5398c03ff8ea1f1ae4b49b74"
+      tag:      "v1.5.0",
+      revision: "0767672bf942d791b92f03e653b99a31d550de2a"
   head "https://github.com/RoryDotGG/QuotaBar.git", branch: "main"
 
   depends_on macos: :sonoma
